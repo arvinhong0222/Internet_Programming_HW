@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>第七次練習</title>
+</head>
+<body>
+    <script>
+        images = new Array(10);
+        for (i = 0; i < 10; i++) {
+            images[i] = new Image();
+            images[i].src = "images/img" + i + ".jpg";
+        }
+        document.write("圖片");
+
+        number0 = Math.floor(Math.random()*10);
+        number1 = Math.floor(Math.random()*10);
+        number2 = Math.floor(Math.random()*10);
+        number3 = Math.floor(Math.random()*10);
+
+        document.write("<img width = 30 height = 30 src = " + images[number0].src + ">");
+        document.write("<img width = 30 height = 30 src = " + images[number1].src + ">");
+        document.write("<img width = 30 height = 30 src = " + images[number2].src + ">");
+        document.write("<img width = 30 height = 30 src = " + images[number3].src + ">");
+
+        function check() {
+            var passwd = document.getElementById("passwd").value;
+            if (passwd == number0 + "" + number1 + "" + number2 + "" + number3) {
+                alert("輸入正確");
+            } else {
+                alert("輸入錯誤");
+            }
+        }
+    </script>
+
+    <Form>請輸入上圖的數字
+        <input type=text name="passwd"
+        id="passwd">
+        <input type=button value="確定"
+        onclick="check()">
+    </Form>
+    
+</body>
+</html>
+
